@@ -80,6 +80,10 @@
  */
 @property (nonatomic, weak) id<TLYShyNavBarManagerDelegate> delegate;
 
+/* Use this to expand a shy view.
+ */
+- (void)expand;
+
 @end
 
 /* PROTOCOL DESCRIPTION:

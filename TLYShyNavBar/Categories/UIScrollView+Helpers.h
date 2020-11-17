@@ -11,6 +11,8 @@
 
 @interface UIScrollView (Helpers)
 
+- (UIEdgeInsets)tly_contentInset;
+
 - (void)tly_setInsets:(UIEdgeInsets)contentInsets;
 
 @end

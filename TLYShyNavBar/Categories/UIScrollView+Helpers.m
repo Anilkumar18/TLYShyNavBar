@@ -10,18 +10,19 @@
 
 @implementation UIScrollView (Helpers)
 
+// Returns the actual `contentInset`
+- (UIEdgeInsets)tly_contentInset
+{
+	if (@available(iOS 11.0, *)) {
+		return self.adjustedContentInset;
+	} else {
+		return self.contentInset;
+	}
+}
+
 // Modify contentInset and scrollIndicatorInsets
 - (void)tly_setInsets:(UIEdgeInsets)contentInsets
 {
-    if (!self.isDragging && !self.isDecelerating && contentInsets.top != self.contentInset.top)
-    {
-        CGFloat offsetDelta = contentInsets.top - self.contentInset.top;
-        
-        CGRect bounds = self.bounds;
-        bounds.origin.y -= offsetDelta;
-        self.bounds = bounds;
-    }
-    
     self.contentInset = contentInsets;
     self.scrollIndicatorInsets = contentInsets;
 }

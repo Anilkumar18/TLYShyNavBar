@@ -230,7 +230,6 @@ static void * const kTLYShyNavBarManagerKVOContext = (void*)&kTLYShyNavBarManage
     self.extensionController.sticky = stickyExtensionView;
 }
 
-
 #pragma mark - Private methods
 
 - (BOOL)_scrollViewIsSuffecientlyLong
@@ -383,6 +382,11 @@ static void * const kTLYShyNavBarManagerKVOContext = (void*)&kTLYShyNavBarManage
 }
 
 #pragma mark - public methods
+
+- (void)expand
+{
+	[self.navBarController expand];
+}
 
 - (void)setExtensionView:(UIView *)view
 {
